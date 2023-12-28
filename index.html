@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <h1>Orçamento Marcenaria</h1>
+
+      <div class="alt">
+        <p>
+          <label for="">
+            Altura:
+            <input
+              class="inp"
+              type="number"
+              name="altura"
+              id="altura"
+              placeholder="altura em mm"
+            />
+          </label>
+        </p>
+      </div>
+
+      <div class="larg">
+        <p>
+          <label for="">
+            Largura:
+            <input
+              class="inp"
+              type="number"
+              name="largura"
+              id="largura"
+              placeholder="largura em mm"
+            />
+          </label>
+        </p>
+      </div>
+
+      <div class="result">
+        <p>
+          <input type="button" id="enviar" value="Calcular" />
+          <label id="txtMedia"></label>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var enviar = document.getElementById("enviar")
+      var resultado = document.getElementById("txtMedia")
+
+      enviar.addEventListener("click", function (event) {
+        var altura01 = document.getElementById("altura").value
+        var largura01 = document.getElementById("largura").value
+        var result = (altura01 * largura01 * 850) / 1000000
+
+        document.getElementById("txtMedia").innerHTML =
+          "Valor do orçamento: R$" + result 
+      })
+    </script>
+  </body>
+</html>
