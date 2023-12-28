@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,9 +10,19 @@
     <div class="page">
       <h1>Orçamento Marcenaria</h1>
 
+      <div class="mdf">
+        <label for="select"></label>
+        <span>Selecione o tipo de MDF</span>
+        <select id="select">
+          <option value="branco">Branco</option>
+          <option value="amadeirado">Amadeirado</option>
+          <option value="amadeiradocaro">Amadeirado caro</option>
+        </select>
+      </div>
+
       <div class="alt">
         <p>
-          <label for="">
+          <label for="altura">
             Altura:
             <input
               class="inp"
@@ -27,7 +37,7 @@
 
       <div class="larg">
         <p>
-          <label for="">
+          <label for="largura">
             Largura:
             <input
               class="inp"
@@ -55,10 +65,19 @@
       enviar.addEventListener("click", function (event) {
         var altura01 = document.getElementById("altura").value
         var largura01 = document.getElementById("largura").value
-        var result = (altura01 * largura01 * 850) / 1000000
+        var select = document.getElementById("select")
+        var operacao = select.options[select.selectedIndex].value
+        var result = 0
 
+        if (operacao == "branco") {
+          result = (altura01 * largura01 * 850) / 1000000
+        } else if (operacao == "amadeirado") {
+          result = (altura01 * largura01 * 1000) / 1000000
+        } else {
+          result = (altura01 * largura01 * 1100) / 1000000
+        }
         document.getElementById("txtMedia").innerHTML =
-          "Valor do orçamento: R$" + result 
+          "Valor do orçamento: R$" + result
       })
     </script>
   </body>

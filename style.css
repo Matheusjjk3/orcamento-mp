@@ -21,11 +21,20 @@ h1 {
   font-size: 32px;
 }
 
-.inp {
+.mdf select {
   border-radius: 3px;
   border: none;
   background-color: #dededb;
   height: 20px;
+  padding: 4px;
+  height: 25px;
+}
+
+.inp {
+  border-radius: 3px;
+  border: none;
+  background-color: #dededb;
+  height: 25px;
   padding: 4px;
 }
 
