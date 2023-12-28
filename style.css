@@ -8,6 +8,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background: #fffdeb;
+}
+
 .page {
   text-align: center;
   display: flex;
@@ -32,7 +36,7 @@
 }
 
 .mdf {
-  margin-top: -70px;
+  margin-top: -80px;
 }
 
 .inp {
