@@ -16,5 +16,5 @@ enviar.addEventListener("click", function (event) {
     result = (altura01 * largura01 * 850) / 1000000
   }
   document.getElementById("txtMedia").innerHTML =
-    "Valor: R$" + result.toFixed(2)
+    "Valor: R$" + result.toFixed(2).replace(".", ",")
 })
