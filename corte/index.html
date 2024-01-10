@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corte MP Planejados</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../orcamento/img/logo-mp.svg" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+      <img id="logo" src="../orcamento/img/logo-mp.svg" alt="" />
+    </header>
+
+      <div class="comp">
+        <p>
+          <label for="comprimento">
+            Comprimento:
+            <input
+              class="inp"
+              type="number"
+              name="comprimento"
+              id="comprimento"
+              placeholder="comprimento total do corte em mm"
+            />
+          </label>
+        </p>
+      </div>
+
+      <div class="velo">
+        <p>
+          <label for="velocidade">
+            Avanço: 
+            <input
+              class="inp"
+              type="number"
+              name="velocidade"
+              id="velocidade"
+              placeholder="avanço mm/seg "
+            />
+          </label>
+        </p>
+      </div>
+
+      <div class="result">
+        <p>
+          <input type="button" id="enviar" value="Calcular" />
+          <label id="txtMedia"></label>
+        </p>
+      </div>
+      <div class="mode">
+        <a href="../orcamento/index.html">
+            <input type="button" id="troca" value="Modo Orçamento Planejados"  />
+        </a>
+    </div>
+    </div>
+
+    <script>
+      var enviar = document.getElementById("enviar")
+      var resultado = document.getElementById("txtMedia")
+
+      enviar.addEventListener("click", function (event) {
+        var comprimento = document.getElementById("comprimento").value
+        var velocidade = document.getElementById("velocidade").value
+        var tempo = 0
+        var valor = 0
+        tempo = (Number(comprimento) / Number(velocidade)) / 60
+        valor = tempo * 5
+
+        
+        document.getElementById("txtMedia").innerHTML =
+        `Tempo do corte: ${tempo.toFixed(1)} min  | Valor: R$ ${valor.toFixed(2).replace(".", ",")}`
+      })
+    </script>
+  </body>
+</html>
