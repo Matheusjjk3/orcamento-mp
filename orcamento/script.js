@@ -9,11 +9,11 @@ enviar.addEventListener("click", function (event) {
   var result = 0
 
   if (operacao == "branco") {
-    result = (altura01 * largura01 * 950) / 1000000
+    result = (altura01 * largura01 * 1100) / 1000000
   } else if (operacao == "amadeirado") {
-    result = (altura01 * largura01 * 1200) / 1000000
+    result = (altura01 * largura01 * 1400) / 1000000
   } else {
-    result = (altura01 * largura01 * 850) / 1000000
+    result = (altura01 * largura01 * 1100) / 1000000
   }
   document.getElementById("txtMedia").innerHTML =
     "Valor: R$" + result.toFixed(2).replace(".", ",")
