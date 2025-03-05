@@ -15,7 +15,7 @@ enviar.addEventListener("click", function (event) {
   } else if (operacao == "ripado") {
     result = (altura01 * largura01 * 1200) / 1000000
   } else {
-     result = (altura01 * largura01 * 9900) / 1000000
+     result = (altura01 * largura01 * 1820) / 1000000
   }
   document.getElementById("txtMedia").innerHTML =
     "Valor: R$" + result.toFixed(2).replace(".", ",")
