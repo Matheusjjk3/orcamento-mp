@@ -12,8 +12,10 @@ enviar.addEventListener("click", function (event) {
     result = (altura01 * largura01 * 1200) / 1000000
   } else if (operacao == "amadeirado") {
     result = (altura01 * largura01 * 1400) / 1000000
-  } else {
+  } else if (operacao == "ripado") {
     result = (altura01 * largura01 * 1200) / 1000000
+  } else {
+     result = (altura01 * largura01 * 9900) / 1000000
   }
   document.getElementById("txtMedia").innerHTML =
     "Valor: R$" + result.toFixed(2).replace(".", ",")
