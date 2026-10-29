@@ -1,0 +1,4 @@
+MP Planejados — correção de fontes ampliadas no Safari iPhone.
+Substitua o index.html na raiz do GitHub e mantenha a pasta img.
+Mantém o mesmo fluxo Preparar > Compartilhar e os preços com reajuste de 5%.
+Ajustes: bloqueio de autoampliação de texto iOS na exportação PDF e detecção automática de telefones.
