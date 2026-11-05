@@ -1,4 +1,4 @@
-.tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.tab{font-size:12px;padding:12px 2px}
+.tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.tab{font-size:12px;padding:12px 2px}
 @media(max-width:410px){.tabs{gap:3px;padding:4px}.tab{font-size:11px;letter-spacing:-.03em}}
 .contract-group-title{font-size:12px;font-weight:850;letter-spacing:.07em;color:#2e624b;text-transform:uppercase;background:#edf5ef;border-radius:10px;padding:10px 12px;margin:7px 0 0}
 .contract-money-summary{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;background:#eef5ef;border-radius:12px;gap:12px}.contract-money-summary span{color:#47634f;font-size:13px}.contract-money-summary strong{font-size:20px}
