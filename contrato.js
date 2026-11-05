@@ -41,6 +41,7 @@ let prepared=null,busy=false;
 function stale(){prepared=null;c('ctActions').hidden=true;c('ctStatus').textContent='Preencha os dados e prepare o PDF para compartilhar.';refresh()}
 for(const e of c('formContrato').querySelectorAll('input,textarea,select'))e.addEventListener('input',stale);
 for(const e of c('formContrato').querySelectorAll('select,input[type=checkbox]'))e.addEventListener('change',stale);
+c('ctTextoManualLabel').hidden=!c('ctPersonalizar').checked;
 c('ctPersonalizar').addEventListener('change',()=>{c('ctTextoManualLabel').hidden=!c('ctPersonalizar').checked;if(c('ctPersonalizar').checked&&!c('ctTextoManual').value){c('ctPersonalizar').checked=false;const auto=clause();c('ctPersonalizar').checked=true;c('ctTextoManual').value=auto||'';}refresh()});
 const today=new Date();c('ctData').value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');refresh();
 function dateLong(iso){const [y,m,d]=iso.split('-').map(Number);return String(d).padStart(2,'0')+' de '+['','janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'][m]+' de '+y}
@@ -104,9 +105,11 @@ c('ctCompartilhar').addEventListener('click',()=>{
 });
 c('formContrato').addEventListener('submit',async e=>{
  e.preventDefault();if(busy)return;
+ const invalid=[...c('formContrato').elements].find(el=>el.willValidate&&!el.checkValidity());
+ if(invalid){invalid.reportValidity();c('ctStatus').textContent='Preencha o campo obrigatório: '+(invalid.closest('label')?.textContent?.trim()||invalid.id);return;}
  const txt=clause();if(!txt){alert('Verifique o valor total, a entrada e as condições de pagamento.');return;}
  if(c('ctPersonalizar').checked&&!/R\$/.test(txt)){alert('Inclua o valor total em reais na cláusula escrita manualmente.');return;}
- if(typeof html2canvas!=='function'||!window.jspdf?.jsPDF){c('ctStatus').textContent='Bibliotecas de PDF ainda não carregaram. Conecte-se à internet e atualize o site.';return;}
+ if(typeof html2canvas!=='function'||!window.jspdf?.jsPDF){c('ctStatus').textContent='Não foi possível carregar o gerador de PDF. Verifique a internet e recarregue a página.';return;}
  const status=c('ctStatus'),button=c('ctPreparar'),documentRoot=c('ctDocument');busy=true;prepared=null;c('ctActions').hidden=true;button.disabled=true;button.textContent='Preparando PDF…';
  const filename='Contrato - '+safeFilename(c('ctNome').value)+'.pdf';status.textContent='Gerando '+filename;
  try{

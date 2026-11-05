@@ -14,3 +14,6 @@
 .contract-sheet .contract-party{text-align:left}.contract-sheet .contract-page-foot{text-align:right;font-size:9pt;color:#444;padding-top:3mm;flex-shrink:0;margin-top:auto}.contract-sheet .contract-date{text-align:right;margin-top:18mm;margin-bottom:13mm}
 .contract-sheet .contract-signatures{position:relative;margin-top:5mm;display:grid;grid-template-columns:1fr 1fr;column-gap:24mm;row-gap:10mm}.contract-sheet .contract-signature{text-align:center;padding-top:13mm;position:relative;font-size:10.5pt}.contract-sheet .contract-signature:before{content:'';height:1px;background:#222;position:absolute;top:11mm;left:0;right:0}.contract-sheet .contract-witness{text-align:left;padding-top:13mm;position:relative;font-size:10pt}.contract-sheet .contract-witness:before{content:'';height:1px;background:#222;position:absolute;top:11mm;left:0;right:0}.contract-sheet .contract-delivery{text-align:center;margin:14mm 0 0 auto;width:48%;font-size:10.5pt}.contract-sheet .contract-delivery b{display:block;border-bottom:1px solid #444;font-weight:400}.contract-sheet .contract-delivery span{display:block;text-align:left}
 @media print{#ctDocument{display:none!important}}
+
+/* Campos opcionais permanecem ocultos até a ativação */
+#ctTextoManualLabel[hidden] { display: none !important; }
