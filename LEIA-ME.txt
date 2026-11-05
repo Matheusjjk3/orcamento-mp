@@ -1,4 +1,35 @@
-MP Planejados — correção de fontes ampliadas no Safari iPhone.
-Substitua o index.html na raiz do GitHub e mantenha a pasta img.
-Mantém o mesmo fluxo Preparar > Compartilhar e os preços com reajuste de 5%.
-Ajustes: bloqueio de autoampliação de texto iOS na exportação PDF e detecção automática de telefones.
+MP PLANEJADOS — SITE COMPLETO COM GERADOR DE CONTRATOS
+
+Conteúdo para publicar no GitHub Pages:
+  index.html
+  contrato.js
+  contrato.css
+  img/logo-mp.svg
+
+Para atualizar o site no GitHub:
+1) Extraia o ZIP.
+2) Envie TODOS os arquivos listados acima para a RAIZ do repositório mp_orcamento.
+3) Mantenha o arquivo contrato.js e contrato.css ao lado de index.html.
+4) Mantenha a pasta img com o logotipo.
+5) Confirme em Commit changes.
+6) Quando a publicação atualizar, abra pelo Safari do iPhone.
+
+As quatro abas são: Móveis, Corte, Gerar PDF (proposta) e Contrato.
+O cálculo de móveis conserva o reajuste de 5%.
+O contrato reproduz as cláusulas fixas do documento enviado e permite trocar
+cliente, CPF, RG, endereço, objeto, valores, condições, data e prazo.
+O saldo e valores por extenso são calculados automaticamente.
+A opção “Escrever condição por conta própria” permite termos especiais.
+
+No iPhone:
+1) Abra a aba Contrato e preencha os dados.
+2) Toque em Preparar contrato em PDF.
+3) Toque em Compartilhar PDF no iPhone e selecione WhatsApp.
+4) Se compartilhar não estiver disponível, use Baixar contrato em PDF.
+
+O PDF é gerado no aparelho, sem envio das informações do cliente a um servidor.
+Uma conexão com a internet é necessária para carregar as bibliotecas de PDF.
+Conferir dados e texto do contrato antes de assinar.
+
+NOTA: textos muito longos que não caibam nas quatro páginas do modelo
+apresentarão aviso de erro em vez de serem cortados sem aviso.
